@@ -4,12 +4,11 @@ import pandas as pd
 from influxdb import InfluxDBClient
 
 def run_py_infl_etl():
-	query = 'SELECT * FROM "test_temp" WHERE time >= now() - 1d ; '
-	query1 = 'SELECT * FROM "test_t_m" WHERE time >= now() - 1d ; '
-	query2 = 'SELECT * FROM "test_t_M" WHERE time >= now() - 1d ; '
-	query3 = 'SELECT * FROM "test_humi" WHERE time >= now() - 1d ; '
+	query = 'SELECT * FROM "temperature" WHERE time >= now() - 1d ; '
+	query1 = 'SELECT * FROM "temperature_bureau" WHERE time >= now() - 1d ; '
+
 	
-	client = InfluxDBClient('localhost',8086,database='ESP32_DHT11_SHCU_TSL45')
+	client = InfluxDBClient('localhost',8086,database='test')
 
 	result = client.query(query)
 	result1 = client.query(query1)
