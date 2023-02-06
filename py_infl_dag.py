@@ -10,7 +10,7 @@ from py_infl_etl import run_py_infl_etl
 default_args = {
     'owner': 'airflow',
     'depends_on_past': False,
-    'start_date': datetime(2021, 9, 12),
+    'start_date': datetime(2023, 2, 5),
     'email': ['airflow@example.com'],
     'email_on_failure': False,
     'email_on_retry': False,
